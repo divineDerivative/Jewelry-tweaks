@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--Add the word 'gold' to the label and fix typo in description-->
+  <!--Bracelet-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Bracelet"]/label</xpath>
+      <value>
+        <label>gold bracelet</label>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Bracelet"]/description</xpath>
+      <value>
+        <description>A beautiful bracelet made from gold and a priceless gem. It improves the wearer's social skill and beauty.</description>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Earring-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Earring"]/label</xpath>
+      <value>
+        <label>gold earring</label>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Earring"]/description</xpath>
+      <value>
+        <description>A beautiful pair of earrings made from gold and a priceless gem. It improves the wearer's social skill, trade skill and beauty.</description>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Necklace-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Necklace"]/label</xpath>
+      <value>
+        <label>gold necklace</label>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Necklace"]/description</xpath>
+      <value>
+        <description>A beautiful necklace made from gold and a priceless gem. It improves the wearer's social skill, trade skill and beauty.</description>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Psyfocus Necklace-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_PsychicNecklace"]/label</xpath>
+      <value>
+        <label>gold psyfocus necklace</label>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_PsychicNecklace"]/description</xpath>
+      <value>
+        <description>A beautiful necklace made from gold and a priceless gem. It improves the weares social skill and beauty. This particular necklace is for psychic focusing. While it provides little physical protection, its special materials enhance the wearer's psychic sensitivity and dissipate psychic entropy.</description>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Ring-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Ring"]/label</xpath>
+      <value>
+        <label>gold ring</label>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="Jewelry_Ring"]/description</xpath>
+      <value>
+        <description>A beautiful ring made from gold and a priceless gem. It improves the wearer's beauty.</description>
+      </value>
+    </match>
+  </Operation>
+  
+  <!--Add defs for silver jewelry-->
+  <!--Bracelet-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="Bracelet">
+          <defName>Jewelry_Bracelet_Silver</defName>
+          <label>silver bracelet</label>
+          <description>A beautiful bracelet made from silver and a priceless gem. It improves the wearer's social skill and beauty.</description>
+          <graphicData>
+            <texPath>Jewellery/JewelleryBracelet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <statBases>
+            <Mass>0.06</Mass>
+            <EquipDelay>0.2</EquipDelay>
+            <Beauty>15</Beauty>
+            <MarketValue>250</MarketValue>
+            <WorkToMake>4000</WorkToMake>
+          </statBases>
+          <equippedStatOffsets>
+            <PawnBeauty>+1</PawnBeauty>
+            <SocialImpact>0.05</SocialImpact>
+          </equippedStatOffsets>
+          <!-- ===== Recipe ===== -->
+          <costStuffCount>10</costStuffCount>
+          <stuffCategories>
+            <li>Gemstones</li>
+          </stuffCategories>
+          <costList>
+            <Silver>2</Silver>
+          </costList>
+          <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <effectWorking>CutStone</effectWorking>
+            <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+            <recipeUsers>
+              <li>LaserTableSculpting</li>
+              <li>TableSculpting</li>
+            </recipeUsers>
+            <researchPrerequisite>Jewelry</researchPrerequisite>
+            <workSkill>Artistic</workSkill>
+            <skillRequirements>
+              <Crafting>5</Crafting>
+              <Artistic>5</Artistic>
+            </skillRequirements>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+          </recipeMaker>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Earring-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="Earrings">
+          <defName>Jewelry_Earring_Silver</defName>
+          <label>silver earring</label>
+          <description>A beautiful pair of earrings made from silver and a priceless gem. It improves the wearer's social skill, trade skill and beauty.</description>
+          <graphicData>
+            <texPath>Jewellery/JewelleryEarrings</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <statBases>
+            <Mass>0.06</Mass>
+            <EquipDelay>0.2</EquipDelay>
+            <Beauty>10</Beauty>
+            <MarketValue>160</MarketValue>
+            <WorkToMake>4000</WorkToMake>
+          </statBases>
+          <equippedStatOffsets>
+            <TradePriceImprovement>0.05</TradePriceImprovement>
+            <PawnBeauty>+1</PawnBeauty>
+            <SocialImpact>0.05</SocialImpact>
+          </equippedStatOffsets>
+          <!-- ===== Recipe ===== -->
+          <costStuffCount>5</costStuffCount>
+          <stuffCategories>
+            <li>Gemstones</li>
+            <li>Stony</li>
+          </stuffCategories>
+          <costList>
+            <Silver>1</Silver>
+          </costList>
+          <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <effectWorking>CutStone</effectWorking>
+            <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+            <recipeUsers>
+              <li>LaserTableSculpting</li>
+              <li>TableSculpting</li>
+            </recipeUsers>
+            <researchPrerequisite>Jewelry</researchPrerequisite>
+            <workSkill>Artistic</workSkill>
+            <skillRequirements>
+              <Crafting>5</Crafting>
+              <Artistic>5</Artistic>
+            </skillRequirements>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+          </recipeMaker>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Necklace-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="Necklace">
+          <defName>Jewelry_Necklace_Silver</defName>
+          <label>silver necklace</label>
+          <description>A beautiful necklace made from silver and a priceless gem. It improves the wearer's social skill, trade skill and beauty.</description>
+          <graphicData>
+            <texPath>Jewellery/JewelleryNecklace</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <statBases>
+            <Mass>0.14</Mass>
+            <EquipDelay>0.3</EquipDelay>
+            <MarketValue>360</MarketValue>
+            <Beauty>10</Beauty>
+            <WorkToMake>4000</WorkToMake>
+          </statBases>
+          <equippedStatOffsets>
+            <TradePriceImprovement>0.05</TradePriceImprovement>
+            <PawnBeauty>+1</PawnBeauty>
+            <SocialImpact>0.1</SocialImpact>
+          </equippedStatOffsets>
+          <!-- ===== Recipe ===== -->
+          <costStuffCount>15</costStuffCount>
+          <stuffCategories>
+            <li>Gemstones</li>
+          </stuffCategories>
+          <costList>
+            <Silver>3</Silver>
+          </costList>
+          <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <effectWorking>CutStone</effectWorking>
+            <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+            <recipeUsers>
+              <li>LaserTableSculpting</li>
+              <li>TableSculpting</li>
+            </recipeUsers>
+            <researchPrerequisite>Jewelry</researchPrerequisite>
+            <workSkill>Artistic</workSkill>
+            <skillRequirements>
+              <Crafting>9</Crafting>
+              <Artistic>5</Artistic>
+            </skillRequirements>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+          </recipeMaker>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Psyfocus Necklace-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="Necklace">
+          <defName>Jewelry_PsychicNecklace_Silver</defName>
+          <label>silver psyfocus necklace</label>
+          <description>A beautiful necklace made from silver and a priceless gem. It improves the wearer's social skill and beauty. This particular necklace is for psychic focusing. While it provides little physical protection, its special materials enhance the wearer's psychic sensitivity and dissipate psychic entropy.</description>
+          <graphicData>
+            <texPath>Jewellery/JewelleryNecklace</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <statBases>
+            <Mass>0.14</Mass>
+            <EquipDelay>0.3</EquipDelay>
+            <MarketValue>450</MarketValue>
+            <Beauty>10</Beauty>
+            <WorkToMake>4000</WorkToMake>
+          </statBases>
+          <equippedStatOffsets>
+            <PsychicSensitivity>0.10</PsychicSensitivity>
+            <PawnBeauty>+1</PawnBeauty>
+            <SocialImpact>0.1</SocialImpact>
+          </equippedStatOffsets>
+          <techLevel>Ultra</techLevel>
+          <tradeTags>
+            <li>PsychicApparel</li>
+          </tradeTags>
+          <thingSetMakerTags>
+            <li>RewardStandardMidFreq</li>
+          </thingSetMakerTags>
+          <apparel>
+            <tags>
+              <li>Psychic</li>
+            </tags>
+          </apparel>
+          <costStuffCount>15</costStuffCount>
+          <stuffCategories>
+            <li>Gemstones</li>
+          </stuffCategories>
+          <costList>
+            <Silver>3</Silver>
+          </costList>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+
+  <!--Ring-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Jewelry</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef ParentName="Ring">
+          <defName>Jewelry_Ring_Silver</defName>
+          <label>silver ring</label>
+          <description>A beautiful ring made from silver and a priceless gem. It improves the wearer's beauty.</description>
+          <graphicData>
+            <texPath>Jewellery/JewelleryRing</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+          </graphicData>
+          <statBases>
+            <Mass>0.06</Mass>
+            <EquipDelay>0.2</EquipDelay>
+            <Beauty>15</Beauty>
+            <MarketValue>150</MarketValue>
+            <WorkToMake>2500</WorkToMake>
+          </statBases>
+          <equippedStatOffsets>
+            <SocialImpact>0.05</SocialImpact>
+          </equippedStatOffsets>
+          <!-- ===== Recipe ===== -->
+          <costStuffCount>5</costStuffCount>
+          <stuffCategories>
+            <li>Gemstones</li>
+          </stuffCategories>
+          <costList>
+            <Silver>1</Silver>
+          </costList>
+          <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <effectWorking>CutStone</effectWorking>
+            <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+            <recipeUsers>
+              <li>LaserTableSculpting</li>
+              <li>TableSculpting</li>
+            </recipeUsers>
+            <researchPrerequisite>Jewelry</researchPrerequisite>
+            <workSkill>Artistic</workSkill>
+            <skillRequirements>
+              <Crafting>5</Crafting>
+              <Artistic>5</Artistic>
+            </skillRequirements>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+          </recipeMaker>
+        </ThingDef>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Add PsychicEntropyRecoveryRate if royalty here -->
+  <!-- Not set in main def so it's still compatible without Royalty DLC-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <success>Always</success>
+      <xpath>Defs/ThingDef[defName="Jewelry_PsychicNecklace_Silver"]/equippedStatOffsets</xpath>
+      <value>
+        <PsychicEntropyRecoveryRate>1</PsychicEntropyRecoveryRate>
+      </value>
+    </match>
+  </Operation>
+  
+</Patch>
